@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<markers>
+    <marker id="1" name="CEFET - RJ" lat="-22.911139" lng="-43.224366" type="I" />
+    <marker id="2" name="FIOCRUZ" lat="-22.875629" lng="-43.242997" type="I" />
+    <marker id="3" name="IFES" lat="-20.307013" lng="-40.302312" type="I" />
+    <marker id="4" name="IFF" lat="-21.734719" lng="-41.324294" type="I" />
+    <marker id="5" name="IFMG" lat="-19.966765" lng="-43.972918" type="I" />
+    <marker id="6" name="IFNMG" lat="-16.716231" lng="-43.868154" type="I" />
+    <marker id="7" name="IFRJ" lat="-22.868429" lng="-43.215478" type="I" />
+    <marker id="8" name="IFSP" lat="-23.523859" lng="-46.622549" type="I" />
+    <marker id="9" name="IFSUDESTEMG" lat="-21.783147" lng="-43.355996" type="I" />
+    <marker id="10" name="IFSULDEMINAS" lat="-22.290731" lng="-45.920989" type="I" />
+    <marker id="11" name="IFTM" lat="-25.485573" lng="-49.219388" type="I" />
+    <marker id="12" name="INES" lat="-22.933797" lng="-43.187564" type="I" />
+    <marker id="13" name="UEMG" lat="-19.794389" lng="-43.950240" type="I" />
+    <marker id="14" name="UENF" lat="-21.762994" lng="-41.291771" type="I" />
+    <marker id="15" name="UERJ" lat="-22.911345" lng="-43.236507" type="I" />
+    <marker id="16" name="UFABC" lat="-23.644587" lng="-46.528324" type="I" />
+    <marker id="17" name="UFES" lat="-20.277779" lng="-40.304482" type="I" />
+    <marker id="18" name="UFF" lat="-22.078681" lng="-41.807377" type="I" />
+    <marker id="19" name="UFJF" lat="-21.777933" lng="-43.367134" type="I" />
+    <marker id="20" name="UFLA" lat="-21.228980" lng="-44.977636" type="I" />
+    <marker id="21" name="UFMG" lat="-19.868745" lng="-43.966427" type="I" />
+    <marker id="22" name="UFOP" lat="-19.929452" lng="-43.937020" type="I" />
+    <marker id="23" name="UFRJ" lat="-22.953845" lng="-43.175385" type="I" />
+    <marker id="24" name="UFRRJ" lat="-22.747699" lng="-43.456900" type="I" />
+    <marker id="25" name="UFSCAR" lat="-21.984135" lng="-47.880406" type="I" />
+    <marker id="26" name="UFSJ" lat="-21.138867" lng="-44.260491" type="I" />
+    <marker id="27" name="UFTM" lat="-19.754687" lng="-47.931180" type="I" />
+    <marker id="28" name="UFU" lat="-18.879386" lng="-48.251072" type="I" />
+    <marker id="29" name="UFV" lat="-20.760594" lng="-42.869258" type="I" />
+    <marker id="30" name="UFVJM" lat="-17.884038" lng="-41.497565" type="I" />
+    <marker id="31" name="UNESP" lat="-22.178664" lng="-48.727705" type="I" />
+    <marker id="32" name="UNICAMP" lat="-22.818400" lng="-47.064656" type="I" />
+    <marker id="33" name="UNIFAL" lat="-21.420502" lng="-45.948848" type="I" />
+    <marker id="34" name="UNIFEI" lat="-22.412243" lng="-45.449680" type="I" />
+    <marker id="35" name="UNIFESP" lat="-23.557773" lng="-46.663285" type="I" />
+    <marker id="36" name="UNIMONTES" lat="-16.718577" lng="-43.877399" type="I" />
+    <marker id="37" name="UNIRIO" lat="-22.875860" lng="-43.162541" type="I" />
+    <marker id="38" name="UNIVESP" lat="-23.548709" lng="-46.733423" type="I" />
+    <marker id="39" name="USP" lat="-23.557541" lng="-46.744090" type="I" />
+</markers>

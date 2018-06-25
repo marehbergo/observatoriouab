@@ -1,0 +1,670 @@
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <head>
+        <!-- Title -->
+        <title>Observatório UAB</title>
+        <!-- Meta -->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <!-- Favicon -->
+        <link href="favicon.ico" rel="shortcut icon">
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
+        <!-- Template CSS -->
+        <link rel="stylesheet" href="assets/css/animate.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/nexus.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
+        <!-- Google Fonts-->
+        <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans" type="text/css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
+
+        <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+        <script type='text/javascript'>
+        	google.load('visualization','1', {'packages': ['geochart']});
+        	google.setOnLoadCallback(drawRegionsMap);
+
+            function drawRegionsMap() {
+        		/*var data = new google.visualization.DataTable();
+        		data.addColumn('string','Country');
+        		data.addColumn('number','Polos');
+        		//data.addRows([[{f:'Distrito Federal', v:'BR-DF'},7], [{f:'Alagoas', v:'BR-AL'},4], [{f:'Amapá', v:'BR-AP'},1], [{f:'Amazonas', v:'BR-AM'},2], [{f:'Bahia', v:'BR-BA'},6], [{f:'Ceará', v:'BR-CE'},5], [{f:'Espírito Santo', v:'BR-ES'},9], [{f:'Goiás', v:'BR-GO'},6], [{f:'Maranhão', v:'BR-MA'},4], [{f:'Mato Grosso', v:'BR-MT'},9], [{f:'Mato Grosso do Sul', v:'BR-MS'},7], [{f:'Minas Gerais', v:'BR-MG'},10], [{f:'Pará', v:'BR-PA'},4], [{f:'Paraíba', v:'BR-PB'},3], [{f:'Paraná', v:'BR-PR'},1], [{f:'Pernambuco', v:'BR-PE'},2], [{f:'Piauí', v:'BR-PI'},9], [{f:'Rio de Janeiro', v:'BR-RJ'},4], [{f:'Rio Grande do Norte', v:'BR-RN'},7], [{f:'Rondônia', v:'BR-RO'},8], [{f:'Santa Catarina', v:'BR-SC'},5], [{f:'São Paulo', v:'BR-SP'},10], [{f:'Sergipe', v:'BR-SE'},1], [{f:'Tocantins', v:'BR-TO'},4]]);
+        		data.addRows([[{f:'Acre', v:'BR-AC'},10],
+                                [{f:'Alagoas', v:'BR-AL'},12],
+                                [{f:'Amapá', v:'BR-AP'},5],
+                                [{f:'Amazonas', v:'BR-AM'},13],
+                                [{f:'Bahia', v:'BR-BA'},58],
+                                [{f:'Ceará', v:'BR-CE'},40],
+                                [{f:'Distrito Federal', v:'BR-DF'},13],
+                                [{f:'Espirito Santo', v:'BR-ES'},27],
+                                [{f:'Goiás', v:'BR-GO'},30],
+                                [{f:'Maranhão', v:'BR-MA'},33],
+                                [{f:'Mato Grosso', v:'BR-MT'},27],
+                                [{f:'Mato Grosso do Sul', v:'BR-MS'},27],
+                                [{f:'Minas Gerais', v:'BR-MG'},106],
+                                [{f:'Pará', v:'BR-PA'},25],
+                                [{f:'Paraíba', v:'BR-PB'},20],
+                                [{f:'Paraná', v:'BR-PR'},61],
+                                [{f:'Pernambuco', v:'BR-PE'},24],
+                                [{f:'Piauí', v:'BR-PI'},45],
+                                [{f:'Rio de Janeiro', v:'BR-RJ'},35],
+                                [{f:'Rio Grande do Norte', v:'BR-RN'},19],
+                                [{f:'Rio Grande do Sul', v:'BR-RS'},53],
+                                [{f:'Rondônia', v:'BR-RO'},7],
+                                [{f:'Roraima', v:'BR-RR'},15],
+                                [{f:'Santa Catarina', v:'BR-SC'},33],
+                                [{f:'São Paulo', v:'BR-SP'},66],
+                                [{f:'Sergipe', v:'BR-SE'},12],
+                                [{f:'Tocantins', v:'BR-TO'},16]
+                                ]);*/
+                    var data = google.visualization.arrayToDataTable([
+                        ['Country'],
+                        ['Brazil'],
+                        ['Acre'],
+                        ['Alagoas'],
+                        ['Amapa'],
+                        ['Amazonas'],
+                        ['Bahia'],
+                        ['Ceara'],
+                        ['Distrito Federal'],
+                        ['Espirito Santo'],
+                        ['Goias'],
+                        ['Maranhao'],
+                        ['Mato Grosso'],
+                        ['Mato Grosso do Sul'],
+                        ['Minas Gerais'],
+                        ['Para'],
+                        ['Paraiba'],
+                        ['Parana'],
+                        ['Pernambuco'],
+                        ['Piaui'],
+                        ['Rio de Janeiro'],
+                        ['Rio Grande do Norte'],
+                        ['Rio Grande do Sul'],
+                        ['Rondonia'],
+                        ['Roraima'],
+                        ['Santa Catarina'],
+                        ['Sao Paulo'],
+                        ['Sergipe'],
+                        ['Tocantins']
+                        ]);
+
+        		var options = {
+                    'title':'Map',
+                    'width':550,
+                    'height':400,
+                    'region':'BR',
+                    'resolution':'provinces',
+                    'defaultColor':'#bdcdfd'};
+
+                var chart = new google.visualization.GeoChart(document.getElementById('map_canvas'));
+       		
+                dicEstados = {
+                    '1' : 'Acre',
+                    '2' : 'Alagoas',
+                    '3' : 'Amapá',
+                    '4' : 'Amazonas',
+                    '5' : 'Bahia',
+                    '6' : 'Ceará',
+                    '7' : 'Distrito Federal',
+                    '8' : 'Espírito Santo',
+                    '9' : 'Goiás',
+                    '10' : 'Maranhão',
+                    '11' : 'Mato Grosso',
+                    '12' : 'Mato Grosso do Sul',
+                    '13' : 'Minas Gerais',
+                    '14' : 'Pará',
+                    '15' : 'Paraíba',
+                    '16' : 'Paraná',
+                    '17' : 'Pernambuco',
+                    '18' : 'Piauí',
+                    '19' : 'Rio de Janeiro',
+                    '20' : 'Rio Grande do Norte',
+                    '21' : 'Rio Grande do Sul',
+                    '22' : 'Rondônia',
+                    '23' : 'Roraima',
+                    '24' : 'Santa Catarina',
+                    '25' : 'São Paulo',
+                    '26' : 'Sergipe',
+                    '27' : 'Tocantins'
+                }
+
+            unidades = {
+                'Acre': {
+                    '0': {
+                        'Polos' : '10',
+                        'Alunos' : '. . .',
+                        'Cursos' : '. . .'
+                        }
+                },
+                'Alagoas': {
+                    '0': {
+                        'Polos' : '12',
+                        'Alunos' : '. . .',
+                        'Cursos' : '. . .'
+                        }
+                },
+                'Amapá':{
+                    '0': {
+                        'Polos' : '5',
+                        'Alunos' : '. . .',
+                        'Cursos' : '. . .'
+                        }
+                },
+                'Amazonas':{
+                    '0': {
+                        'Polos' : '13',
+                        'Alunos' : '. . .',
+                        'Cursos' : '. . .'
+                        }
+                },
+                'Bahia':{
+                    '0': {
+                        'Polos' : '58',
+                        'Alunos' : '. . .',
+                        'Cursos' : '. . .'
+                        }
+                },
+                'Ceará':{
+                    '0': {
+                        'Polos' : '40',
+                        'Alunos' : '. . .',
+                        'Cursos' : '. . .'
+                        }
+                },
+                'Distrito Federal':{
+                    '0': {
+                        'Polos' : '13',
+                        'Alunos' : '. . .',
+                        'Cursos' : '. . .'
+                        }
+                },
+                'Espirito Santo': {
+                    '0' : {
+                        'Polos' : '27',
+                        'Alunos' : '. . .',
+                        'Cursos' : '. . .'
+                        }
+                },
+                'Goiás': {
+                    '0' : {
+                        'Polos' : '30',
+                        'Alunos' : '. . .',
+                        'Cursos' : '. . .'
+                        }
+                },
+                'Maranhão':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '33',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Mato Grosso':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '27',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Mato Grosso do Sul':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '27',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Minas Gerais':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '107',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Pará':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '25',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Paraíba':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '20',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Paraná':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '61',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Pernambuco':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '24',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Piauí':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '45',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Rio de Janeiro':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '35',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Rio Grande do Norte':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '19',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Rio Grande do Sul':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '53',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Rondônia':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '7',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Roraima':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '15',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Santa Catarina':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '33',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'São Paulo':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '66',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Sergipe':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '12',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                },
+                'Tocantins':
+                {
+                    '0' : 
+                    {
+                    'Polos' : '16',
+                    'Alunos' : '. . .',
+                    'Cursos' : '. . .'
+                    }
+                }
+            }
+
+            function myClickHandler(){
+                var selection = chart.getSelection();
+                var message = '';
+                for (var i = 0; i < selection.length; i++) {
+                    var item = selection[i];
+                    if (item.row != null && item.column != null) {
+                        message += '{' + item.row + ',column:' + item.column + '}';
+                    } else if (item.row != null) {
+                        message += '' + item.row + '';
+                    } else if (item.column != null) {
+                        message += '{column:' + item.column + '}';
+                    }
+                }
+                if (message == '') {
+                    message = 'nothing';
+                }
+                document.getElementById("dadosLojas").innerHTML = '';
+                for(var i = 0; i < 2 ; i ++){ //Para fins de demonstracao, so existem duas lojas em cada unidade
+                document.getElementById("estado").innerHTML = dicEstados[message];
+                document.getElementById("dadosLojas").innerHTML += 
+                '<br><br><br><b>Polos Presenciais: </b>' + 
+                unidades[dicEstados[message]][i]['Polos'] + 
+                '<br><br><b>Alunos Matriculados: </b>' + 
+                unidades[dicEstados[message]][i]['Alunos'] + 
+                '<br><br><b>Cursos ofertados: </b>' 
+                + unidades[dicEstados[message]][i]['Cursos'] + '<br>';
+                }
+            }
+
+            google.visualization.events.addListener(chart, 'select', myClickHandler);
+            chart.draw(data, options);
+            }
+           
+        </script>
+
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+            
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Tipo', 'Quantidade'],
+                    ['Especialização', 685],
+                    ['Licenciatura', 444],
+                    ['Aperfeiçoamento', 195],
+                    ['Bacharelado', 94],
+                    ['Extensão', 20],
+                    ['Tecnológico', 6]
+                    ]);
+   
+                var options = {
+                    pieHole: 0.4,
+                    colors: ['#02273a', '#033752', '#04486b', '#055984', '#06699c', '#077ab5'],
+                    legend: {
+                        position: "bottom"	
+                    },
+                    chartArea:{left:0,top:0,width:'100%',height:'100%'}
+                    };
+                
+                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                chart.draw(data, options);
+            }
+        </script>
+
+
+
+
+    </head>
+        <style>
+            /* Always set the map height explicitly to define the size of the div element that contains the map. */
+            #map {
+              height: 100%;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+            }
+        </style>
+          
+    <body>
+        <div id="body-bg">
+            <!-- === BEGIN HEADER === -->
+            <div id="pre-header" class="container" style="height: 40px">
+            <!-- Spacing above header -->
+            </div>
+            
+            <div id="header">
+                <div class="container">
+                    <div class="row">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="index.html" title="">
+                                <img src="assets/img/UAB.png" style="height: 80px" alt="Logo" />
+                            </a>
+                        </div>
+                        <!-- End Logo -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Top Menu -->
+            <div id="hornav" class="container no-padding">
+                <div class="row">
+                    <div class="col-md-12 no-padding">
+                        <div class="text-center visible-lg">
+                            <ul id="hornavmenu" class="nav navbar-nav">
+                                <li>
+                                    <a href="index.html" class="fa-home">Home</a>
+                                </li>
+                                <li>
+                                    <span class="fa-graduation-cap">Cursos</span>
+                                    <ul>
+                                        <li><a href="mapaIES.php">Buscar Cursos</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="fa-copy">Demanda x Oferta</span>
+                                    <ul>
+                                        <li><a href="pesquisaDemanda.html">Pesquisa de Demanda</a></li>
+                                        <li><a href="demandaOferta.php">Cadastro de Oferta</a></li>
+                                        <li><a href="mapa.html">Proposta de Oferta</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="fa-th">Indicadores</span>
+                                    <ul>
+                                        <li><a href="dados.html">Dados SisUAB</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="fa-font">Análise da Evasão</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Menu -->
+            
+            <div id="post_header" class="container" style="height: 40px">
+                <!-- Spacing below header -->
+            </div>
+            <div id="content-top-border" class="container"></div>
+            <!-- === END HEADER === -->
+
+            <!-- === BEGIN CONTENT === -->
+            <div id="content">
+                <div class="container background-white">
+                    <div class="row margin-vert-30">
+                        <h2>SisUAB em números:</h2>
+
+                    <!--
+                        quantos alunos
+                        quantos Polos
+                        quantos cursos (grad/esp)
+                            - grad/esp
+                            - formaçao de profs / PNAP
+                            - pelo país
+                            - por area
+                    -->
+
+                        <div class="col-md-12">
+                            <div class="tabbable">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#one" data-toggle="tab">Presente</a></li>
+                                    <li><a href="#two" data-toggle="tab">Passado</a></li>
+                                    <li><a href="#twee" data-toggle="tab">Futuro</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="one">
+                                        <div class="row">
+                                            <div class="col-md-7"> 
+                                                <br>
+                                                <h3>Distribuição dos Polos pelo Brasil:</h3>
+                                                <div id='map_canvas' class="text-center"></div>
+                                            </div>
+                                            <div class="col-md-5 feature">
+                                                <br><br><br>
+                                                <h3>Selecione um <b>estado</b></h3>
+                                                    <h5>Informações sobre <span id="estado"></span>:<h5>
+                                                    <div id="dadosLojas" style="overflow-y: scroll; height:300px;"></div>
+                                            </div>
+                                        </div>
+                                            
+                                        <div class="row">
+                                            <div class="col-sm-5 col-md-5">
+                                                <br>
+                                                <h3>Em Minas Gerais:</h3>
+                                                <div class="row">
+                                                    <br>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <br>
+                                                        <div class="text-center">
+                                                            <i class="fas fa-map-marker fa-4x"></i>
+                                                            <h2><b>106</b></h2>
+                                                            <h5>Polos em MG</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <br>
+                                                        <div class="text-center">
+                                                            <i class="fa fa-child fa-4x"></i>
+                                                            <h2><b>25.266</b></h2>
+                                                            <h5>Alunos matriculados</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row"><br>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <br>
+                                                        <div class="text-center">
+                                                            <i class="fa fa-book fa-4x"></i>
+                                                            <h2><b>758</b></h2>
+                                                            <h5>Ofertas em andamento</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6 col-md-6">
+                                                        <br>
+                                                        <div class="text-center">
+                                                            <i class="fas fa-map-marker fa-4x"></i>
+                                                            <h2><b>21</b></h2>
+                                                            <h5>Instituições Públicas de Ensino Superior atuando em MG</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-7 col-md-7">
+                                                <br>
+                                                <h3>Tipos de curso:</h3>
+                                                <div id="donutchart" style="height: 320px; margin-top: 40px;"></div>
+                                                <!--
+                                                    <div class="footer">
+                                                    <div class="legend">
+                                                        <i class="fa fa-circle" style="color:#02273a;"></i> Especialização
+                                                        <i class="fa fa-circle" style="color:#033752;"></i> Licenciatura
+                                                        <i class="fa fa-circle" style="color:#04486b;"></i> Aperfeiçoamento
+                                                        <br><i class="fa fa-circle" style="color:#055984;"></i> Bacharelado
+                                                        <i class="fa fa-circle" style="color:#06699c;"></i> Extensão
+                                                        <i class="fa fa-circle" style="color:#077ab5;"></i> Tecnológico
+                                                    </div>
+                                                </div>
+
+                                                -->
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="two">
+                                        Em breve...
+                                    </div>
+                                    <div class="tab-pane" id="twee">
+                                        Em breve...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === END CONTENT === -->
+
+            <!-- === BEGIN FOOTER === -->
+            <div id="content-bottom-border" class="container">
+            </div>
+            
+            <!-- Footer Menu -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div id="copyright" class="col-md-4">
+                            <p class="pull-right">(c) 2018 Maria Emilia Bergo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer Menu -->
+            <!-- JS -->
+            <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
+            <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+            <script type="text/javascript" src="assets/js/scripts.js"></script>
+            <!-- Isotope - Portfolio Sorting -->
+            <script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></script>
+            <!-- Mobile Menu - Slicknav -->
+            <script type="text/javascript" src="assets/js/jquery.slicknav.js" type="text/javascript"></script>
+            <!-- Animate on Scroll-->
+            <script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></script>
+            <!-- Sticky Div -->
+            <script type="text/javascript" src="assets/js/jquery.sticky.js" charset="utf-8"></script>
+            <!-- Slimbox2-->
+            <script type="text/javascript" src="assets/js/slimbox2.js" charset="utf-8"></script>
+            <!-- Modernizr -->
+            <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
+            <!-- End JS -->
+
+        <script type="text/javascript" src="assets/js/loader.js"></script>
+        <script type="text/javascript" src="assets/js/jsapi.js"></script>
+    </body>
+</html>
+<!-- === END FOOTER === -->

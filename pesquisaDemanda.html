@@ -1,0 +1,646 @@
+<!-- === BEGIN HEADER === -->
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <head>
+        <!-- Title -->
+        <title>Observatório UAB</title>
+        <!-- Meta -->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <!-- Favicon -->
+        <link href="favicon.ico" rel="shortcut icon">
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
+        <!-- Template CSS -->
+        <link rel="stylesheet" href="assets/css/animate.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/nexus.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
+        <!-- Google Fonts-->
+        <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans" type="text/css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
+
+        <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script>
+        <script type = "text/javascript">
+            google.charts.load('current', {packages: ['corechart','bar','treemap']});
+        </script>
+    </head>
+
+    <body>
+        <div id="body-bg">
+            <!-- === BEGIN HEADER === -->
+            <div id="pre-header" class="container" style="height: 40px">
+            <!-- Spacing above header -->
+            </div>
+            
+            <div id="header">
+                <div class="container">
+                    <div class="row">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="index.html" title="">
+                                <img src="assets/img/UAB.png" style="height: 80px" alt="Logo" />
+                            </a>
+                        </div>
+                        <!-- End Logo -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Top Menu -->
+            <div id="hornav" class="container no-padding">
+                <div class="row">
+                    <div class="col-md-12 no-padding">
+                        <div class="text-center visible-lg">
+                            <ul id="hornavmenu" class="nav navbar-nav">
+                                <li>
+                                    <a href="index.html" class="fa-home">Home</a>
+                                </li>
+                                <li>
+                                    <span class="fa-graduation-cap">Cursos</span>
+                                    <ul>
+                                        <li><a href="mapaIES.php">Buscar Cursos</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="fa-copy">Demanda x Oferta</span>
+                                    <ul>
+                                        <li><a href="pesquisaDemanda.html">Pesquisa de Demanda</a></li>
+                                        <li><a href="demandaOferta.php">Cadastro de Oferta</a></li>
+                                        <li><a href="mapa.html">Proposta de Oferta</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="fa-th">Indicadores</span>
+                                    <ul>
+                                        <li><a href="dados.html">Dados SisUAB</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="fa-font">Análise da Evasão</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Menu -->
+            
+            <div id="post_header" class="container" style="height: 40px">
+                <!-- Spacing below header -->
+            </div>
+            <div id="content-top-border" class="container"></div>
+            <!-- === END HEADER === -->
+
+            <!-- === BEGIN CONTENT === -->
+            <div id="content">
+                <div class="container background-white">
+                    <br>
+                    <h2>Resultados preliminares</h2><br>
+                    
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h3>Participação dos polos (por estados):</h3>
+                            <div id = "alcance" style = "width: 350px; height: 300px; margin: 0 auto"></div>
+                        </div>
+                
+                        <div class="col-md-7">
+                            <div class="tabbable">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#one" data-toggle="tab">ES</a></li>
+                                    <li><a href="#two" data-toggle="tab">MG</a></li>
+                                    <li><a href="#tree" data-toggle="tab">RJ</a></li>
+                                    <li><a href="#four" data-toggle="tab">SP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="one">
+                                        <div id = "participacaoES" style = "width: 450px; height: 300px; margin: 0 auto"></div>
+                                    </div>
+                                    <div class="tab-pane" id="two">
+                                        <div id = "participacaoMG" style = "width: 450px; height: 300px; margin: 0 auto"></div>
+                                    </div>
+                                    <div class="tab-pane active" id="tree">
+                                        <div id = "participacaoRJ" style = "width: 450px; height: 300px; margin: 0 auto"></div>
+                                    </div>
+                                    <div class="tab-pane active" id="four">
+                                        <div id = "participacaoSP" style = "width: 450px; height: 300px; margin: 0 auto"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br><h2>Perfil pessoal e profissional:</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <br><h3>Faixa etária dos participantes:</h3><br>
+                        </div>
+                        <div class="col-md-6">
+                            <br><h3>Atuação em áreas relacionadas à educação:</h3><br>
+                            <div id = "polos" style = "width: 450px; height: 250px; margin: 0 auto"></div>
+                        </div>
+                    </div>
+                   
+                    <h3>Último grau de formação:</h3>
+                    <div id = "escolaridade" style = "width: 950px; height: 300px; margin: 0 auto"></div>
+                    
+                    <h2>Interesses acadêmicos:</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-5">
+                            <br><h3>Tipo de formação:</h3><br>
+                            <div id = "tipo" style = "height: 500px; margin: 0 auto"></div>
+                        </div>
+                        <div class="col-md-7">
+                            <br><h3>Áreas de preferência:</h3><br>
+                            <div class="tabbable">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#one" data-toggle="tab">ES</a></li>
+                                    <li><a href="#two" data-toggle="tab">MG</a></li>
+                                    <li><a href="#tree" data-toggle="tab">RJ</a></li>
+                                    <li><a href="#four" data-toggle="tab">SP</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="one">
+                                        <div id = "participacaoES" style = "width: 450px; height: 300px; margin: 0 auto"></div>
+                                    </div>
+                                    <div class="tab-pane active" id="two">
+                                        <div id = "participacaoMG" style = "width: 450px; height: 300px; margin: 0 auto"></div>
+                                    </div>
+                                    <div class="tab-pane active" id="tree">
+                                        <div id = "participacaoRJ" style = "width: 450px; height: 300px; margin: 0 auto"></div>
+                                    </div>
+                                    <div class="tab-pane active" id="four">
+                                        <div id = "participacaoSP" style = "width: 450px; height: 300px; margin: 0 auto"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                  
+            <!-- === END CONTENT === -->
+
+            <!-- === BEGIN FOOTER === -->
+            <div id="content-bottom-border" class="container">
+            </div>
+            
+            <!-- Footer Menu -->
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div id="copyright" class="col-md-4">
+                            <p class="pull-right">(c) 2018 Maria Emilia Bergo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer Menu -->
+            <!-- JS -->
+            <script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
+            <script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+            <script type="text/javascript" src="assets/js/scripts.js"></script>
+            <!-- Isotope - Portfolio Sorting -->
+            <script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></script>
+            <!-- Mobile Menu - Slicknav -->
+            <script type="text/javascript" src="assets/js/jquery.slicknav.js" type="text/javascript"></script>
+            <!-- Animate on Scroll-->
+            <script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></script>
+            <!-- Sticky Div -->
+            <script type="text/javascript" src="assets/js/jquery.sticky.js" charset="utf-8"></script>
+            <!-- Slimbox2-->
+            <script type="text/javascript" src="assets/js/slimbox2.js" charset="utf-8"></script>
+            <!-- Modernizr -->
+            <script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
+
+            <script language = "JavaScript">
+                    function drawChartAlcance() {
+                        // Define the chart to be drawn.
+                        var data = google.visualization.arrayToDataTable([
+                            ['UF', 'Polos participantes', 'Polos existentes'],
+                            ['ES', 10, 17],
+                            ['MG', 103, 3],
+                            ['RJ', 16, 18],
+                            ['SP', 35, 31]
+                        ]);
+                        
+                        var options = {
+                            //title: 'Participação dos polos na pesquisa',
+                            isStacked:'percent',
+                            colors: ['#e0440e', '#ec8f6e'],
+                            legend: { position: 'bottom', alignment: 'end' },
+                            chartArea: {width: '80%'}
+                        };  
+                        
+                        // Instantiate and draw the chart.
+                        var chart = new google.visualization.ColumnChart(document.getElementById('alcance'));
+                        chart.draw(data, options);
+                    }
+                    google.charts.setOnLoadCallback(drawChartAlcance);
+        
+                    function drawChartParticipacao() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
+                            ['Global', null, 0, 0],
+                            ['ES', 'Global', 0, 0],
+                            ['MG', 'Global', 0, 0],
+                            ['RJ', 'Global', 0, 0],
+                            ['SP', 'Global', 0, 0],
+        
+                            ['Alegre', 'ES', 1, 1],
+                            ['Aracruz', 'ES', 2, 2],
+                            ['Ecoporanga', 'ES', 2, 2],
+                            ['Montanha', 'ES', 3, 3],
+                            ['Pinheiros', 'ES', 1, 1],
+                            ['Piúma', 'ES', 1, 1],
+                            ['São Mateus', 'ES', 3, 3],
+                            ['Venda Nova do Imigrante', 'ES', 1, 1],
+                            ['Vila Velha', 'ES', 2, 2],
+                            ['Vitória', 'ES', 12, 12],
+        
+                            ['Águas Formosas', 'MG', 4, 4],
+                            ['Almenara', 'MG', 28, 28],
+                            ['Alterosa', 'MG', 24, 24],
+                            ['Andrelândia', 'MG', 166, 166],
+                            ['Araçuaí', 'MG', 53, 53],
+                            ['Araguari', 'MG', 53, 53],
+                            ['Araxá', 'MG', 383, 383],
+                            ['Bambuí', 'MG', 52, 52],
+                            ['Barão de Cocais', 'MG', 46, 46],
+                            ['Barroso', 'MG', 307, 307],
+                            ['Bicas', 'MG', 50, 50],
+                            ['Boa Esperança', 'MG', 208, 208],
+                            ['Bocaiúva', 'MG', 306, 306],
+                            ['Bom Despacho', 'MG', 353, 353],
+                            ['Brasília de Minas', 'MG', 4, 4],
+                            ['Brumadinho', 'MG', 22, 22],
+                            ['Buritis', 'MG', 397, 397],
+                            ['Buritizeiro', 'MG', 27, 27],
+                            ['Cambuí', 'MG', 76, 76],
+                            ['Campestre', 'MG', 48, 48],
+                            ['Campo Belo', 'MG', 15, 15],
+                            ['Campos Gerais', 'MG', 28, 28],
+                            ['Carandaí', 'MG', 86, 86],
+                            ['Caratinga', 'MG', 41, 41],
+                            ['Carlos Chagas', 'MG', 9, 9],
+                            ['Carmo do Rio Claro', 'MG', 10, 10],
+                            ['Carneirinho', 'MG', 5, 5],
+                            ['Cataguases', 'MG', 10, 10],
+                            ['Cláudio', 'MG', 4, 4],
+                            ['Conceição do Mato Dentro', 'MG', 9, 9],
+                            ['Confins', 'MG', 531, 531],
+                            ['Conselheiro Lafaiete', 'MG', 688, 688],
+                            ['Contagem', 'MG', 438, 438],
+                            ['Corinto', 'MG', 31, 31],
+                            ['Coromandel', 'MG', 93, 93],
+                            ['Cristália', 'MG', 6, 6],
+                            ['Diamantina', 'MG', 72, 72],
+                            ['Divinolândia de Minas', 'MG', 23, 23],
+                            ['Divinópolis', 'MG', 90, 90],
+                            ['Durandé', 'MG', 4, 4],
+                            ['Formiga', 'MG', 23, 23],
+                            ['Francisco Sá', 'MG', 11, 11],
+                            ['Frutal', 'MG', 17, 17],
+                            ['Governador Valadares', 'MG', 64, 64],
+                            ['Ilicínea', 'MG', 120, 120],
+                            ['Ipanema', 'MG', 5, 5],
+                            ['Ipatinga', 'MG', 481, 481],
+                            ['Itabira', 'MG', 93, 93],
+                            ['Itamarandiba', 'MG', 192, 192],
+                            ['Itamonte', 'MG', 214, 214],
+                            ['Itanhandu', 'MG', 32, 32],
+                            ['Ituiutaba', 'MG', 280, 280],
+                            ['Jaboticatubas', 'MG', 102, 102],
+                            ['Janaúba', 'MG', 14, 14],
+                            ['Januária', 'MG', 17, 17],
+                            ['Jequitinhonha', 'MG', 10, 10],
+                            ['Joaíma', 'MG', 14, 14],
+                            ['João Monlevade', 'MG', 262, 262],
+                            ['João Pinheiro', 'MG', 6, 6],
+                            ['Juiz de Fora', 'MG', 67, 67],
+                            ['Lagamar', 'MG', 70, 70],
+                            ['Lagoa Santa', 'MG', 495, 495],
+                            ['Lavras', 'MG', 86, 86],
+                            ['Leopoldina', 'MG', 18, 18],
+                            ['Mantena', 'MG', 55, 55],
+                            ['Mariana', 'MG', 10, 10],
+                            ['Minas Novas', 'MG', 26, 26],
+                            ['Monte Azul', 'MG', 1, 1],
+                            ['Monte Sião', 'MG', 343, 343],
+                            ['Montes Claros', 'MG', 107, 107],
+                            ['Nanuque', 'MG', 142, 142],
+                            ['Nova Serrana', 'MG', 203, 203],
+                            ['Ouro Preto', 'MG', 36, 36],
+                            ['Padre Paraíso', 'MG', 6, 6],
+                            ['Papagaios', 'MG', 7, 7],
+                            ['Paracatu', 'MG', 29, 29],
+                            ['Paraisópolis', 'MG', 183, 183],
+                            ['Passos', 'MG', 214, 214],
+                            ['Patos de Minas', 'MG', 217, 217],
+                            ['Pedra Azul', 'MG', 6, 6],
+                            ['Pompéu', 'MG', 88, 88],
+                            ['Rio Paranaíba', 'MG', 6, 6],
+                            ['Rio Pardo de Minas', 'MG', 1, 1],
+                            ['Sabará', 'MG', 663, 663],
+                            ['Salinas', 'MG', 57, 57],
+                            ['Santa Rita de Caldas', 'MG', 888, 888],
+                            ['Santa Rita do Sapucaí', 'MG', 166, 166],
+                            ['São João da Ponte', 'MG', 117, 117],
+                            ['São João del Rei', 'MG', 139, 139],
+                            ['São Sebastião do Paraíso', 'MG', 196, 196],
+                            ['Sete Lagoas', 'MG', 395, 395],
+                            ['Taiobeiras', 'MG', 64, 64],
+                            ['Teófilo Otoni', 'MG', 87, 87],
+                            ['Timóteo', 'MG', 477, 477],
+                            ['Tiradentes', 'MG', 27, 27],
+                            ['Três Marias', 'MG', 5, 5],
+                            ['Turmalina', 'MG', 27, 27],
+                            ['Ubá', 'MG', 63, 63],
+                            ['Uberaba', 'MG', 147, 147],
+                            ['Uberlândia', 'MG', 412, 412],
+                            ['Urucuia', 'MG', 5, 5],
+                            ['Varginha', 'MG', 87, 87],
+                            ['Várzea da Palma', 'MG', 78, 78],
+        
+                            ['Angra dos Reis', 'RJ', 2, 2],
+                            ['Duque de Caxias', 'RJ', 7, 7],
+                            ['Iguaba Grande', 'RJ', 1, 1],
+                            ['Itaguaí', 'RJ', 1, 1],
+                            ['Macaé', 'RJ', 1, 1],
+                            ['Niterói', 'RJ', 4, 4],
+                            ['Nova Friburgo', 'RJ', 1, 1],
+                            ['Nova Iguaçu', 'RJ', 6, 6],
+                            ['Resende', 'RJ', 4, 4],
+                            ['Rio Bonito', 'RJ', 1, 1],
+                            ['Rio das Ostras', 'RJ', 2, 2],
+                            ['Rio de Janeiro', 'RJ', 25, 25],
+                            ['São Gonçalo', 'RJ', 3, 3],
+                            ['São Pedro da Aldeia', 'RJ', 3, 3],
+                            ['Três Rios', 'RJ', 2, 2],
+                            ['Volta Redonda', 'RJ', 2, 2],
+        
+                            ['Apiaí', 'SP', 1, 1],
+                            ['Araras', 'SP', 266, 266],
+                            ['Bálsamo', 'SP', 12, 12],
+                            ['Barretos', 'SP', 423, 423],
+                            ['Barueri', 'SP', 7, 7],
+                            ['Botucatu', 'SP', 180, 180],
+                            ['Bragança Paulista', 'SP', 499, 499],
+                            ['Campinas', 'SP', 54, 54],
+                            ['Cubatão', 'SP', 23, 23],
+                            ['Diadema', 'SP', 17, 17],
+                            ['Franca', 'SP', 1908, 1908],
+                            ['Guarulhos', 'SP', 133, 133],
+                            ['Igarapava', 'SP', 9, 9],
+                            ['Itapecerica da Serra', 'SP', 7, 7],
+                            ['Itapetininga', 'SP', 3, 3],
+                            ['Itapevi', 'SP', 5, 5],
+                            ['Jales', 'SP', 1, 1],
+                            ['Jandira', 'SP', 3, 3],
+                            ['Jaú', 'SP', 14, 14],
+                            ['Matão', 'SP', 322, 322],
+                            ['Mirandópolis', 'SP', 1, 1],
+                            ['Osasco', 'SP', 7, 7],
+                            ['Peruíbe', 'SP', 20, 20],
+                            ['Santa Isabel', 'SP', 101, 101],
+                            ['Santos', 'SP', 283, 283],
+                            ['São Carlos', 'SP', 28, 28],
+                            ['São João da Boa Vista', 'SP', 429, 429],
+                            ['São José do Rio Preto', 'SP', 44, 44],
+                            ['São José dos Campos', 'SP', 98, 98],
+                            ['São Paulo', 'SP', 162, 162],
+                            ['Serrana', 'SP', 615, 615],
+                            ['Tarumã', 'SP', 2, 2],
+                            ['Viradouro', 'SP', 12, 12],
+                            ['Votorantim', 'SP', 84, 84],
+                            ['Votuporanga', 'SP', 42, 42]
+                            ]);
+        
+                            tree = new google.visualization.TreeMap(document.getElementById('participacao'));
+        
+                            tree.draw(data, {
+                            minColor: '#f6c7b6',
+                            midColor: '#ec8f6e',
+                            maxColor: '#e0440e',
+                            headerHeight: 15,
+                            fontColor: 'black',
+                            showScale: true
+                            });
+                        }
+                    google.charts.setOnLoadCallback(drawChartParticipacao);
+        
+                    function drawBarParticipacaoES() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Polo', 'Participação'],
+                            ['Vitória', 12],
+                            ['Montanha', 3],
+                            ['São Mateus', 3],
+                            ['Aracruz', 2],
+                            ['Ecoporanga', 2],
+                            ['Vila Velha', 2],
+                            ['Alegre', 1],
+                            ['Pinheiros', 1],
+                            ['Piúma', 1],
+                            ['Venda Nova do Imigrante', 1]
+                        ]);
+        
+                        var options = {
+                            //title: 'Participação por polos no estado do ES',
+                            chartArea: {width: '70%'},
+                            legend: 'none',
+                            colors: ['#e6693e'],
+                            hAxis: {
+                                title: 'Número de participantes',
+                                minValue: 0
+                                },
+                        };
+                        var chart = new google.visualization.BarChart(document.getElementById('participacaoES'));
+                        chart.draw(data, options);
+                    }
+                    google.charts.setOnLoadCallback(drawBarParticipacaoES);
+                 
+                    function drawBarParticipacaoMG() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Polo', 'Participação'],
+                            ['Santa Rita de Caldas', 888],
+                            ['Conselheiro Lafaiete', 688],
+                            ['Sabará', 663],
+                            ['Confins', 531],
+                            ['Lagoa Santa', 495],
+                            ['Ipatinga', 481],
+                            ['Timóteo', 477],
+                            ['Contagem', 438],
+                            ['Uberlândia', 412],
+                            ['Buritis', 397]
+                        ]);
+        
+                        var options = {
+                            //title: 'Participação por polos no estado de MG',
+                            chartArea: {width: '70%'},
+                            legend: 'none',
+                            colors: ['#e6693e'],
+                            hAxis: {
+                                title: 'Número de participantes',
+                                minValue: 0
+                                },
+                        };
+                        var chart = new google.visualization.BarChart(document.getElementById('participacaoMG'));
+                        chart.draw(data, options);
+                    }
+                    google.charts.setOnLoadCallback(drawBarParticipacaoMG);
+        
+                    function drawBarParticipacaoRJ() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Polo', 'Participação'],
+                            ['Rio de Janeiro', 25],
+                            ['Duque de Caxias', 7],
+                            ['Nova Iguaçu', 6],
+                            ['Niterói', 4],
+                            ['Resende', 4],
+                            ['São Gonçalo', 3],
+                            ['São Pedro da Aldeia', 3],
+                            ['Angra dos Reis', 2],
+                            ['Rio das Ostras', 2],
+                            ['Três Rios', 2]
+                        ]);
+                        
+                        var options = {
+                            //title: 'Participação por polos no estado do RJ',
+                            chartArea: {width: '70%'},
+                            legend: 'none',
+                            colors: ['#e6693e'],
+                            hAxis: {
+                                title: 'Número de participantes',
+                                minValue: 0
+                                },
+                        };
+                        var chart = new google.visualization.BarChart(document.getElementById('participacaoRJ'));
+                        chart.draw(data, options);
+                    }
+                    google.charts.setOnLoadCallback(drawBarParticipacaoRJ);
+        
+                    function drawBarParticipacaoSP() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['Polo', 'Participação'],
+                            ['Franca', 1908],
+                            ['Serrana', 615],
+                            ['Bragança Paulista', 499],
+                            ['São João da Boa Vista', 429],
+                            ['Barretos', 423],
+                            ['Matão', 322],
+                            ['Santos', 283],
+                            ['Araras', 266],
+                            ['Botucatu', 180],
+                            ['São Paulo', 162]
+                        ]);
+                        
+                        var options = {
+                            //title: 'Participação por polos no estado de SP',
+                            chartArea: {width: '70%'},
+                            colors: ['#e6693e'],
+                            legend: 'none',
+                            hAxis: {
+                                title: 'Número de participantes',
+                                minValue: 0
+                                },
+                        };
+                        var chart = new google.visualization.BarChart(document.getElementById('participacaoSP'));
+                        chart.draw(data, options);
+                    }
+                    google.charts.setOnLoadCallback(drawBarParticipacaoSP);
+        
+                    function drawChartAtuacao() {
+                        // Define the chart to be drawn.
+                        var data = google.visualization.arrayToDataTable([
+                            ['UF', 'Não atua', 'Atua como professor', 'Atua na área administrativa'],
+                            ['ES', 8, 15, 5],
+                            ['MG', 7710, 4008, 1555],
+                            ['RJ', 45, 12, 8],
+                            ['SP', 3429, 1729,  657]
+                        ]);
+                        
+                        var options = {
+                            title: 'Atuação em áreas da educação',
+                            isStacked:'percent',
+                            //legend: {position: 'bottom'},
+                            colors: ['#e0440e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+                            chartArea: {left: 0, top: 10, width: '70%'},
+                        };  
+                        
+                        // Instantiate and draw the chart.
+                        var chart = new google.visualization.ColumnChart(document.getElementById('polos'));
+                        chart.draw(data, options);
+                    }
+                    google.charts.setOnLoadCallback(drawChartAtuacao);
+                    
+                    function drawChartTipo() {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Tipo', 'Preferencia'],
+                        ['Pós-graduação - Especialização', 8950],
+                        ['Pós-graduação - Mestrado', 8478],
+                        ['Graduação - Licenciatura', 7821],
+                        ['Formação continuada', 6767],
+                        ['Graduação - Bacharelado', 5485],
+                        ['Graduação - Formação Tecnológica', 3282],
+                        ['Pós-graduação - Doutorado', 3838]
+                        ]);
+        
+                        var options = {
+                        //title: 'Preferência dos participantes pelos tipos de formação oferecidas na modalidade EaD',
+                        pieHole: 0.4,
+                        chartArea: {left: 0, top: 10, width: '100%'},
+                        colors: ['#e0440e', '#e6693e', '#e97c56', '#ec8f6e', '#f3b49f', '#f6c7b6', '#f8d9ce'],
+                        legend: 'none',
+                        //legend: { position: 'bottom', maxLines: 5},
+                        //#e0440e   #e35626 #e6693e #e97c56 #ec8e6e #efa186 #f2b49e #f5c6b6 #f8d9ce #fbece6 #ffffff
+                        };
+        
+                        var chart = new google.visualization.PieChart(document.getElementById('tipo'));
+                        chart.draw(data, options);
+                    }
+                    google.charts.setOnLoadCallback(drawChartTipo);
+        
+                    function drawChartEscolaridade() {
+                        var data = google.visualization.arrayToDataTable([
+                            ['UF', 'Ensino Médio', 'Graduação (Tecnólogo)', 'Graduação (Bacharelado)',
+                            'Graduação (Licenciatura)', 'Especialização', 'Mestrado', 'Doutorado', { role: 'annotation' } ],
+                            ['ES', 5, 1, 5, 5, 10, 0, 2, ''],
+                            ['MG', 4781, 493, 2184, 2561, 2824, 373, 57, ''],
+                            ['RJ', 12, 1, 14, 10, 17, 9, 2, ''],
+                            ['SP', 1553, 282, 809, 1322, 1609, 189, 51, ''],
+                        ]);
+        
+                        var options = {
+                            title: 'Grau de formação dos participantes',
+                            legend: { position: 'right'},
+                            bar: { groupWidth: '75%' },
+                            isStacked: 'percent',
+                            chartArea: {left: 0, top: 10, width: '80%'},
+                            colors: ['#e0440e', '#e6693e', '#e97c56', '#ec8f6e', '#f3b49f', '#f6c7b6', '#f8d9ce']
+                        };
+        
+                        var chart = new google.visualization.BarChart(document.getElementById('escolaridade'));
+                        chart.draw(data, options);
+                    }
+                    google.charts.setOnLoadCallback(drawChartEscolaridade);
+        
+                </script>
+
+            <!-- End JS -->
+
+        <script type="text/javascript" src="assets/js/loader.js"></script>
+        <script type="text/javascript" src="assets/js/jsapi.js"></script>
+    </body>
+</html>
+<!-- === END FOOTER === -->
